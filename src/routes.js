@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const packageJson = require('../package.json');
 const CategoryController = require('./controllers/category.controller');
+const databaseController = require('./Controllers/database.controller');
 const UserController = require('./controllers/user.controller');
 
 const routes = Router();
@@ -20,5 +21,7 @@ routes.get('/users/:id', UserController.get);
 routes.post('/users', UserController.save);
 routes.put('/users', UserController.edit);
 routes.delete('/users/:id', UserController.delete);
+
+routes.get('/database/backup', databaseController.backup);
 
 module.exports = routes;
