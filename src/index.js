@@ -1,13 +1,11 @@
 const express = require("express");
 const cors = require("cors");
-const mongoose = require("mongoose");
 const routes = require("./routes");
 require('dotenv').config();
 
 const app = express();
 
-mongoose.connect(process.env.DB_HOST, { useNewUrlParser: true, useUnifiedTopology: true });
-//TODO: Error handling on crash connect mongoose
+
 
 app.use(cors());
 app.use(express.json());
